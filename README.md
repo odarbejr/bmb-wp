@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Readme</title>
-</head>
-<body>
-    
-    <h2>Install WordPress</h2>
+<h2>Install WordPress</h2>
+<p>
     <ol>
         <li>Download and unzip the WordPress package if you haven’t already.</li>
         <li>Create a database for WordPress on your web server, as well as a MySQL </li>
@@ -20,10 +11,10 @@
             If you installed WordPress in the root directory, you should visit: http://example.com/
             If you installed WordPress in its own subdirectory called blog, for example, you should visit: http://localhost/bmb-wp/</li>    
       </ol> 
+</p>
 
-
-      <h2>Credential db</h2>
-
+<h2>Credential db</h2>
+<p>
     <ol>
         <li>open wp-config.php</li>
         <li>username: admin</li>
@@ -31,12 +22,12 @@
         <li>http://localhost/bmb-wp/wp-login.php</li>
         <li>visit site: http://localhost/bmb-wp/</li>
     </ol> 
-
+</p>
     <h2>Themes source code </h2>
-
+<p>
     <ol>
         <li>Open folder</li>
         <li>wp-content>themes>bmb</li>
     </ol> 
-</body>
-</html>
+
+</p>
