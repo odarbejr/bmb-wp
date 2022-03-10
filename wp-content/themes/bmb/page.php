@@ -1,4 +1,4 @@
-<?php /* Template Name: CustomPageT1 */ ?>
+<?php /* Template Name: createpage */ ?>
  
 <?php get_header(); ?>
  
@@ -6,19 +6,21 @@
     <main id="main" class="site-main" role="main">
         <?php
         // Start the loop.
-        while ( have_posts() ) : the_post();
+        while ( have_posts() ) : the_post();?>
  
+            
+            <?php 
             // Include the page content template.
-            get_template_part( 'template-parts/create', 'page' );
+                get_template_part('template-parts/create', 'page' ); ?>
+
  
-            // If comments are open or we have at least one comment, load up the comment template.
+            <!-- // If comments are open or we have at least one comment, load up the comment template.
             if ( comments_open() || get_comments_number() ) {
                 comments_template();
-            }
+            } -->
  
-            // End of the loop.
-        endwhile;
-        ?>
+        <?php endwhile; // end of the loop. ?>
+        
  
     </main><!-- .site-main -->
  
