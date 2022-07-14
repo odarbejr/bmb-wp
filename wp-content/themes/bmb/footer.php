@@ -1,3 +1,5 @@
+</main>
+
 <?php
 /* Inline script printed out in the footer */
 add_action('wp_footer', 'tutsplus_add_script_wp_footer');
@@ -9,5 +11,7 @@ function tutsplus_add_script_wp_footer() {
         </script>
     <?php
 }
+
+
 
 

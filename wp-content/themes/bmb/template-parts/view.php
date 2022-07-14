@@ -24,8 +24,8 @@
 </div>   
 
 <script>
-        
-    fetch("http://127.0.0.1:8000/restApi/Layers_attribute/")
+    // fetch("http://34.80.33.52/api/v2/layers/")
+    fetch('http://127.0.0.1:8000/api/Layers_attribute/')
     
     .then(response => response.json())
     .then(json => {
@@ -33,7 +33,8 @@
         let result = "";
         
         json.forEach(getData => {
-            while (result < 1) {
+            
+            // while (result < 1) {
                 console.log(getData);
                 result += `
                 <div class="row">
@@ -63,12 +64,31 @@
                         </div>
                     </div>
                 </div>`;
-            }
+            // }
         });
         // Display result
         document.getElementById("getData").innerHTML = result;
     });
+
+    // fetch('http://127.0.0.1:8000/api/Layers_attribute/75/')
+    // .then(res => res.json())
+    // .then(res => {
+    //     res.data.map(getData => {
+    //         console.log(`${getData.id}: ${getData.layer_name} ${getData.description} ${getData.region} ${getData.city}`);
+    //     });
+    // });
+
+
+    //     function getID(id){
+    //         fetch('http://127.0.0.1:8000/api/Layers_attribute/'+id+'/')
+    // .then(res => res.text())
+    // .then(res => console.log(res));
+    //     }
     
+
 </script>
+
+
+  
 
 

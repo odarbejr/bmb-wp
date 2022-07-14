@@ -15,7 +15,8 @@
                         <div class="card-header bg-white pt-3"><h5>Update attributes</h5></div>
                         <div class="card-body">
                             <input type="hidden" name="id"  />
-                            <div id="id"></div>
+                            <div id="result"></div>
+                            <input type="text" class="form-control" id="layer_name" name="layer_name">
                         </div>
                     </div>
                 </div>
@@ -27,20 +28,24 @@
 
 <script>
 
-function edit(id){
-    console.log(id);
+function edit(attribute){
+    
     $.ajax({
         type: 'GET',
         dataType: 'json',
-        url: "http://127.0.0.1:8000/restApi/Layers_attribute/", success: function (result) {
+        // headers: {Authorization: 'Bearer '+token}
+        url: "http://127.0.0.1:8000/api/Layers_attribute/", success: function (result) {
 
-            var row=document.getElementById(id);
-            row.innerHTML=`<div>
-                <td>${id} </td>
-                <td>${layer_name} </td>
-                <td>${description}</td> 
-            </div>`;
-                document.getElementById("id").innerHTML = result;
+            $('#layer_name' + attribute)html($(layer_name)).val();
+
+            // var row=document.getElementById(id);
+            // console.log(result);
+            // row.innerHTML=`<div>
+            //     <td>${id} </td>
+            //     <td>${layer_name} </td>
+            //     <td>${description}</td> 
+            // </div>`;
+            //     document.getElementById("result").innerHTML = result;
         }
     }); 
 }

@@ -29,16 +29,17 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="type_of_animal" class="col-form-label">Type of animal:</label>
-                                    <select class="choices-multiple-remove-button form-control" id="type_of_animal" placeholder="Select " multiple>
+                                    <!-- <select class="getTypeAnimal form-control" id="type_of_animal" placeholder="Select " multiple>
                                         <option value="Paniki">Paniki</option>
                                         <option value="Bear">Bear</option>
-                                        <option value="">Monkey</option>
-                                        <option value="">Snike 3</option>
+                                        <option value="Monkey">Monkey</option>
+                                        <option value="Snike 3">Snike 3</option>
                                         <option value="">Dog 4</option>
                                         <option value="">Cat</option>
                                         <option value="">Alaconda</option>
                                         <option value="">Angular</option>
-                                    </select>
+                                    </select> -->
+                                    <select class="type_of_animal form-control" name="type_of_animal" id="type_of_animal"></select>
                                 </div>
                                 <form class="form-horizontal">
                                     <div class="form-group">
@@ -65,20 +66,20 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <label for="country" class="col-form-label">Country</label>
-                                    <select name="country" class="countries form-control" id="countryId">
+                                    <select name="country" class="countries form-control select-data" id="countryId">
                                         <option value="">Select country</option>
                                     </select>
                                 </div>
                                 
                                 <div class="">
                                     <label for="region" class="col-form-label">Region</label>
-                                    <select name="region" class="region form-control" id="stateId">
+                                    <select name="region" class="region form-control select-data" id="stateId">
                                         <option value="">Select region</option>
                                     </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="city" class="col-form-label">City</label>    
-                                    <select name="city" class="cities form-control" id="cityId">
+                                    <select name="city" class="cities form-control select-data" id="cityId">
                                         <option value="">Select city</option>
                                     </select>
                                 </div>
@@ -159,7 +160,7 @@
                 // "remarks": remarks
             },
 
-            url: "http://127.0.0.1:8000/restApi/Layers_attribute/",
+            url: "http://127.0.0.1:8000/api/Layers_attribute/",
             error: function (xhr, status, error) {
 
                 var err_msg = ''
@@ -190,6 +191,33 @@
             }
         });
     });
+
+    let dropdown = $('#type_of_animal');
+
+    dropdown.empty();
+
+    dropdown.append('<option selected="true" disabled>Select animals</option>');
+    dropdown.prop('selectedIndex', 0);
+
+    const url = 'http://127.0.0.1:8000/api/Type_of_animals/';
+
+    // Populate dropdown with list of type of animal
+    $.getJSON(url, function (data) {
+        $.each(data, function (key, entry) {
+            dropdown.append($('<option></option>').attr('value', entry.abbreviation).text(entry.name));
+        })
+    });
+
+    // $(document).ready(function(){
+
+    //     var multipleCancelButton = new Choices('.getTypeAnimal', {
+    //         removeItemButton: true,
+    //         maxItemCount:100,
+    //         searchResultLimit:100,
+    //         renderChoiceLimit:100
+    //     });
+    // });
+
 </script>
 <script>
     $(function(){

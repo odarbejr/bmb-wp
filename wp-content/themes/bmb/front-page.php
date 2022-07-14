@@ -51,7 +51,8 @@
             $.ajax({
                 type: 'GET',
                 dataType: 'json',
-                url: "http://127.0.0.1:8000/restApi/Layers_attribute/", success: function (result) {
+                // url: "http://34.80.33.52/api/v2/layers", success: function (result) {
+                url: "http://127.0.0.1:8000/api/Layers_attribute/", success: function (result) {
                    
                     var totalCount = result;
                     var structureDiv = "";
@@ -89,7 +90,7 @@
                 type: 'DELETE',
                 dataType: 'json',
 
-                url: "http://127.0.0.1:8000/restApi/Layers_attribute/"+id+"/",
+                url: "http://127.0.0.1:8000/api/Layers_attribute/"+id+"/",
                 error: function (xhr, status, error) {
 
                     var err_msg = ''
